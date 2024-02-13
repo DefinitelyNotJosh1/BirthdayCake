@@ -8,7 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
+
 
         <TextView
             android:id="@+id/textView"
@@ -16,48 +18,124 @@
             android:layout_height="wrap_content"
             android:textSize="60sp"
             android:textColor="@android:color/holo_orange_light"
-            android:text="Happy Birthday!" />
+            android:text="Happy Birthday!"
+
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        >
+
 
         <!--        CakeView is a custom SurfaceView that is defined in the app's source code -->
         <cs301.birthdaycake.CakeView
             android:id="@+id/cakeview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="0"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        android:gravity="center"
+        >
 
-        <Button
-            android:id="@+id/button"
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HOORAY!!" />
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="20sp" >
 
-        <Switch
-            android:id="@+id/switch1"
+            <TextView
+                android:id="@+id/candleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="How many candles?"
+                android:padding="5sp"
+                android:textSize="20sp"
+                />
+
+            <SeekBar
+                android:id="@+id/candleSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5sp"
+                android:max="5"
+                android:min="2"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_weight="0"
-            android:text="Frosting" />
+            android:padding="10sp"
+            >
 
-        <Button
-            android:id="@+id/button2"
+            <Switch
+                android:id="@+id/frostingswitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Frosting"
+                android:gravity="top"
+                android:padding="10sp"
+                android:checked="true"
+                />
+
+            <Switch
+                android:id="@+id/candleSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Candles"
+                android:padding="10sp"
+                android:checked="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="yay..." />
+            android:orientation="vertical"
+            android:layout_weight="0"
+            android:paddingRight="20sp"
+            android:paddingBottom="5sp"
+            android:padding="10sp">
 
 
+            <Button
+                android:id="@+id/blowOutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blow Out" />
 
+            <Button
+                android:id="@+id/goodbyeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goodbye"
+                android:onClick="goodbye"
+
+
+                />
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
