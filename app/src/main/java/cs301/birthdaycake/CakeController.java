@@ -17,7 +17,13 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
 
     @Override
     public void onClick(View v) {
-        cakeModel.candlesLit = false;
+        if (cakeModel.candlesLit) {
+            cakeModel.candlesLit = false;
+        }
+        else {
+            cakeModel.candlesLit = true;
+        }
+
         cakeView.invalidate();
     }
 
