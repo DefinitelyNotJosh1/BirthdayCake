@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         CakeView cakeView = findViewById(R.id.cakeview);
 
         //create CakeController
-        CakeController cakeController = new CakeController(cakeView);
+        CakeController cakeController = new CakeController(cakeView, this);
 
         //retrieve reference to "Blow Out" button
         Button blowOutButton = findViewById(R.id.blowOutButton);

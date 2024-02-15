@@ -9,19 +9,24 @@ import android.widget.SeekBar;
 public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
     private CakeView cakeView;
     private CakeModel cakeModel;
+    private MainActivity mainActivity;
 
-    public CakeController(CakeView ck) {
+    public CakeController(CakeView ck, MainActivity ma) {
         cakeView = ck;
         cakeModel = cakeView.getCakeModel();
+        mainActivity = ma;
     }
 
     @Override
     public void onClick(View v) {
+        Button b = mainActivity.findViewById(R.id.blowOutButton);
         if (cakeModel.candlesLit) {
             cakeModel.candlesLit = false;
+            b.setText("Re-Light");
         }
         else {
             cakeModel.candlesLit = true;
+            b.setText("Blow Out");
         }
 
         cakeView.invalidate();
