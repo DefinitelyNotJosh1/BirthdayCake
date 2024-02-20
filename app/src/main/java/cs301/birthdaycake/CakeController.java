@@ -26,7 +26,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         }
         else {
             cakeModel.candlesLit = true;
-            b.setText("Blow Out");
+            b.setText("Extinguish");
         }
 
         cakeView.invalidate();
