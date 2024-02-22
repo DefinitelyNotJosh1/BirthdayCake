@@ -34,19 +34,6 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     }
     /** whenever the user touches the surface view */
 
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        String c = Float.toString(x) + ","+ Float.toString(y);
-
-
-        cakeModel.cords = c;
-        cakeView.invalidate();
-
-        return false;
-
-    }
-
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (!isChecked) {
@@ -79,6 +66,10 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         cakeView.balloon = new Balloon(x, y);
+
+        String c = Float.toString(x) + ","+ Float.toString(y);
+
+        cakeModel.cords = c;
         cakeView.invalidate();
 
         return false;
