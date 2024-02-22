@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
+public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
     private CakeView cakeView;
     private CakeModel cakeModel;
     private MainActivity mainActivity;
@@ -67,7 +67,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         cakeView.balloon = new Balloon(x, y);
 
         Checkerboard initCheckerboard = new Checkerboard(x, y);
-        cakeView.setCheckerboard(initCheckerboard)
+        cakeView.setCheckerboard(initCheckerboard);
         String c = Float.toString(x) + ","+ Float.toString(y);
 
         cakeModel.cords = c;
