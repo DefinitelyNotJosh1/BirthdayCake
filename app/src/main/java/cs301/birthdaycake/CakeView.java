@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -16,6 +18,12 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+
+    public void setCheckerboard(Checkerboard checkerboard) {
+        this.checkerboard = checkerboard;
+    }
+
+    private Checkerboard checkerboard;
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -67,6 +75,7 @@ public class CakeView extends SurfaceView {
         wickPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);  //better than black default
+
 
     }
 
@@ -144,6 +153,10 @@ public class CakeView extends SurfaceView {
         for (int i = 1; i <= cakeModel.numCandles; i++) {
             drawCandle(canvas, cakeLeft + (cakeWidth / (cakeModel.numCandles + 1) * i)
                                             - candleWidth / (cakeModel.numCandles), cakeTop);
+        }
+
+        if (checkerboard != null) {
+            checkerboard.draw(canvas);
         }
 
     }//onDraw

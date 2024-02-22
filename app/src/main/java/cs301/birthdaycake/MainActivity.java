@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         //connect controller to object
         candlesSeekBar.setOnSeekBarChangeListener(cakeController);
 
+        //set onTouchListener to cakeController
+        cakeView.setOnTouchListener(cakeController);
+
     }
 
     public void goodbye(View button) {
